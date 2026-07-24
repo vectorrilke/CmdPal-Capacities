@@ -23,7 +23,6 @@ AppPublisherURL={#AppURL}
 AppSupportURL={#AppURL}
 AppUpdatesURL={#AppURL}
 CreateAppDir=no
-LicenseFile=..\..\..\LICENSE
 OutputDir=bin\Release\installer
 OutputBaseFilename={#ProjectName}-{#AppVersion}
 DefaultDirName={userappdata}\Microsoft\Command Palette Extensions\{#ProjectName}
