@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "CapacitiesCommandPaletteExtension (Package)": {
+      "commandName": "MsixPackage",
+      "doNotLaunchApp": true
+    },
+    "CapacitiesCommandPaletteExtension (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
