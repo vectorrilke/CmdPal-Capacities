@@ -31,14 +31,6 @@ Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=lowest
 ShowLanguageDialog=no
-VersionInfoVersion={#AppVersion}
-VersionInfoCompany={#AppPublisher}
-VersionInfoDescription={#AppName}
-VersionInfoProductName={#AppName}
-VersionInfoProductVersion={#AppVersion}
-VersionInfoOriginalFileName={#ProjectName}.exe
-VersionInfoInternalName={#ProjectName}
-VersionInfoCopyright=Copyright (c) Vector Rilke
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
