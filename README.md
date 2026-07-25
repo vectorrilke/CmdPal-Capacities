@@ -96,29 +96,29 @@ The extension focuses on **search, open, append, and create** workflows for stan
 
 ## Roadmap
 
-### Version 1.0 (Current - 0.1.0)
-- ✅ Search existing objects
-- ✅ Open objects in App/Web
-- ✅ Append text to objects
+See the [**ROADMAP.md**](ROADMAP.md) file for a detailed release plan.
+
+**Quick Summary:**
+
+| Version | Status | Timeline |
+|---------|--------|----------|
+| 0.1.0 | ✅ RC | Available now |
+| 1.0 | 📋 Planning | Q3 2026 |
+| 1.1 | 📋 Planned | Q4 2026 |
+| 1.2 | 📋 Planned | Q1 2027 |
+| 1.3+ | 🔮 Future | 2027+ |
+
+**Current Focus (v0.1.0):**
+- ✅ Search and open objects
+- ✅ Append markdown content
 - ✅ Create new objects
-- 📋 Publish to WinGet (PR #407721 submitted)
-- 🎯 Submit to CmdPal gallery
+- 📋 WinGet submission (PR #407721)
 
-### Version 1.1
-- Stabilization and issue fixes
-- Icon mapping and visual refinement
-- UI polish improvements
-
-### Version 1.2
-- Microsoft Store publication
-- Auto-update mechanism
-- Enhanced structure visualization
-
-### Future (Version 1.3+)
-- Task management workflows
-- Daily Notes integration
-- Media object support
-- Rich content creation
+**Next Steps (v1.0+):**
+- Stabilization and community feedback
+- CmdPal gallery submission
+- Microsoft Store (v1.2)
+- Task/Daily Notes support (v1.3+)
 
 ## Getting Your API Token
 
