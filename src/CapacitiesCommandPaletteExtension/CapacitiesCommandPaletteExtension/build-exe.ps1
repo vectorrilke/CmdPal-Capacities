@@ -67,8 +67,8 @@ foreach ($Platform in $Platforms) {
     # Update output filename to include platform suffix
     $setupScript = $setupScript -replace 'OutputBaseFilename=(.*?)\{#AppVersion\}', "OutputBaseFilename=`$1{#AppVersion}-$Platform"
     
-    # Update source path for the platform
-    $setupScript = $setupScript -replace 'Source: "bin\\Release\\win-x64\\publish', "Source: `"bin\Release\win-$Platform\publish"
+    # Update BuildFolder define for the platform
+    $setupScript = $setupScript -replace '#define BuildFolder "bin\\Release\\win-x64\\publish"', "#define BuildFolder `"bin\Release\win-$Platform\publish`""
     
     # Add architecture settings after [Setup] section
     if ($Platform -eq "arm64") {
