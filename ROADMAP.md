@@ -24,7 +24,7 @@ See [API_LIMITATIONS.md](API_LIMITATIONS.md) for details on:
 
 ---
 
-## Version 1.0 (Q3 2026)
+## Version 1.0
 
 **Goal:** Stabilize and expand distribution
 
@@ -35,13 +35,9 @@ See [API_LIMITATIONS.md](API_LIMITATIONS.md) for details on:
 - 📋 Extended documentation and tutorials
 - 📋 Community issue triage
 
-### Expected Release
-- Late Q3 2026
-- Dependent on Capacities API stabilization
-
 ---
 
-## Version 1.1 (Q4 2026)
+## Version 1.1
 
 **Goal:** Improve user experience and visual polish
 
@@ -61,7 +57,7 @@ See [API_LIMITATIONS.md](API_LIMITATIONS.md) for details on:
 
 ---
 
-## Version 1.2 (Q1 2027)
+## Version 1.2
 
 **Goal:** Expand platform availability
 
@@ -77,7 +73,7 @@ See [API_LIMITATIONS.md](API_LIMITATIONS.md) for details on:
 
 ---
 
-## Version 1.3+ (2027+)
+## Version 1.3+
 
 **Goal:** Advanced workflows and richer integration
 
@@ -115,62 +111,25 @@ See [API_LIMITATIONS.md](API_LIMITATIONS.md) for details on:
 
 ---
 
-## Dependency Tracking
-
-### External Dependencies
-
-**Capacities API**
-- Search endpoint: ✅ Stable
-- Structure metadata: ✅ Stable
-- Object creation: ✅ Mostly stable
-- Task API: ⏳ Evolving
-- Daily Notes API: ⏳ Evolving
-- Media handling: ⏳ Planning phase
-
-**Windows PowerToys CmdPal**
-- Extension framework: ✅ Stable
-- UI components: ✅ Stable
-- Future mobile/cloud: 📋 Planned
-
-**Distribution Platforms**
-- WinGet: ✅ Active
-- CmdPal Gallery: 📋 Planned
-- Microsoft Store: 📋 Planning
-
----
-
 ## Feedback & Voting
 
-### How to Influence the Roadmap
+Want to influence the roadmap? Here's how:
 
-1. **Vote on Features**
-   - GitHub Discussions: [Feature Requests](https://github.com/vectorrilke/CmdPal-Capacities/discussions/categories/feature-requests)
-   - React with 👍 to show interest
-
-2. **Report Issues**
-   - GitHub Issues: [Report a Bug](https://github.com/vectorrilke/CmdPal-Capacities/issues)
-   - Include steps to reproduce and expected behavior
-
-3. **Start a Discussion**
-   - Ask questions about planned features
-   - Suggest use cases
-   - Share workflow ideas
-
-4. **Contribute**
-   - Pull requests welcome
-   - See [Contributing Guidelines](README.md#contributing)
+- **Vote on Features**: React with 👍 on [GitHub Discussions](https://github.com/vectorrilke/CmdPal-Capacities/discussions)
+- **Report Issues**: [GitHub Issues](https://github.com/vectorrilke/CmdPal-Capacities/issues)
+- **Start a Discussion**: Share use cases and workflow ideas
 
 ---
 
-## Release Schedule
+## Release Status
 
-| Version | Status | Planned Release |
-|---------|--------|-----------------|
-| 0.1.0 | 🟢 RC | Now (WinGet PR #407721) |
-| 1.0 | 🟡 Planning | Q3 2026 |
-| 1.1 | 🔵 Backlog | Q4 2026 |
-| 1.2 | 🔵 Backlog | Q1 2027 |
-| 1.3+ | 🔵 Future | TBD |
+| Version | Status |
+|---------|--------|
+| 0.1.0 | 🟢 Released / Release Candidate |
+| 1.0 | 🟡 In Progress / Planning |
+| 1.1 | 🔵 Planned / Backlog |
+| 1.2 | 🔵 Planned / Backlog |
+| 1.3+ | 🔵 Future |
 
 **Legend:**
 - 🟢 Released / Release Candidate
@@ -190,27 +149,6 @@ We will provide:
 - Migration guides for breaking changes
 - Deprecation warnings in minor releases before removal
 - At least 2 releases notice before removing features
-
----
-
-## Architecture & Technical Notes
-
-### Build System
-- PowerShell 7+ orchestration
-- .NET 10 (net10.0-windows10.0.26100.0)
-- Inno Setup 6 for installer generation
-- GitHub Actions for CI/CD
-
-### Supported Platforms
-- **Windows 10.0.26100.0+** (requires Windows 11)
-- **Architectures:** x64, ARM64
-- **Runtime:** .NET 10.0
-
-### Performance Targets
-- Search response: < 500ms (95th percentile)
-- Create object: < 1s (95th percentile)
-- Append text: < 500ms (95th percentile)
-- Memory footprint: < 50MB resident
 
 ---
 

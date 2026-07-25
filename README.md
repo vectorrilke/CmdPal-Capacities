@@ -8,6 +8,14 @@ Search objects, open them, append text, and create new objects without leaving C
 ![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-blue.svg)
 ![Status: Release Candidate](https://img.shields.io/badge/Status-Release%20Candidate-green.svg)
 
+## Requirements
+
+⚠️ **You need a Capacities Pro subscription** to use this extension.
+
+The extension requires API access to Capacities, which is only available with a **Capacities Pro** paid plan. Free accounts do not have API access.
+
+→ [Get Capacities Pro](https://capacities.io/pricing)
+
 ## Quick Start
 
 ### Installation
@@ -96,87 +104,7 @@ The extension focuses on **search, open, append, and create** workflows for stan
 
 ## Roadmap
 
-See the [**ROADMAP.md**](ROADMAP.md) file for a detailed release plan.
-
-**Quick Summary:**
-
-| Version | Status | Timeline |
-|---------|--------|----------|
-| 0.1.0 | ✅ RC | Available now |
-| 1.0 | 📋 Planning | Q3 2026 |
-| 1.1 | 📋 Planned | Q4 2026 |
-| 1.2 | 📋 Planned | Q1 2027 |
-| 1.3+ | 🔮 Future | 2027+ |
-
-**Current Focus (v0.1.0):**
-- ✅ Search and open objects
-- ✅ Append markdown content
-- ✅ Create new objects
-- 📋 WinGet submission (PR #407721)
-
-**Next Steps (v1.0+):**
-- Stabilization and community feedback
-- CmdPal gallery submission
-- Microsoft Store (v1.2)
-- Task/Daily Notes support (v1.3+)
-
-## Getting Your API Token
-
-1. Go to https://capacities.io/settings/developer
-2. Generate an API token
-3. Copy the token
-4. In Command Palette, use the extension's token setting command to save it
-
-## Security Note
-
-Your API token is stored in the Windows Registry outside of user-visible settings. It is never:
-- Displayed in plain text in settings
-- Logged to disk
-- Transmitted to any server other than Capacities' official API
-
-## Project Structure
-
-```
-src/CapacitiesCommandPaletteExtension/
-├── CapacitiesCommandPaletteExtension.cs          # Main extension class
-├── Capacities/                                   # API client
-│   ├── CapacitiesClient.cs
-│   ├── CapacitiesContentComposer.cs
-├── Commands/                                     # Command implementations
-│   ├── OpenCapacitiesObjectCommand.cs
-│   ├── CreateObjectCommand.cs
-│   ├── AppendToObjectAndOpenCommand.cs
-│   └── ...
-├── Pages/                                        # UI pages
-│   ├── CapacitiesCommandPaletteExtensionPage.cs
-│   ├── CreateObjectEnterNamePage.cs
-│   └── ...
-├── Parsing/                                      # Input parsing
-│   └── CapCommandParser.cs
-└── Settings/                                     # Configuration
-    └── ExtensionSettings.cs
-```
-
-## Development
-
-### Requirements
-- .NET 10.0 SDK or later
-- Windows 10.0.26100.0 or later
-- PowerToys Command Palette installed
-
-### Build
-
-```powershell
-cd src/CapacitiesCommandPaletteExtension
-dotnet build CapacitiesCommandPaletteExtension.csproj
-```
-
-### Create Installer
-
-```powershell
-# Requires Inno Setup 6
-.\build-exe.ps1 -Platforms @("x64", "arm64") -Version "0.1.0.0"
-```
+For roadmap of future versions, see [ROADMAP.md](ROADMAP.md)
 
 ## Contributing
 
