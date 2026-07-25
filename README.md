@@ -1,17 +1,31 @@
-# CmdPal Capacities
+# CmdPal Capacities Extension
 
-Capacities integration for Windows Command Palette (PowerToys CmdPal).
+**Capacities integration for Windows Command Palette (PowerToys CmdPal)**
 
 Search objects, open them, append text, and create new objects without leaving Command Palette.
 
-## Current status
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-blue.svg)
+![Status: Release Candidate](https://img.shields.io/badge/Status-Release%20Candidate-green.svg)
 
-1. Current milestone: Version 0.9 release candidate
-2. Target first public release: Version 1.0
-3. Planned distribution order:
-   - winget
-   - CmdPal gallery
-   - Microsoft Store (Version 1.2)
+## Quick Start
+
+### Installation
+
+```powershell
+# Via WinGet (submission in progress)
+winget install VectorRilke.CmdPal-Capacities
+
+# Manual: Download from GitHub Releases
+# https://github.com/vectorrilke/CmdPal-Capacities/releases
+```
+
+### Usage
+
+1. Open Command Palette (PowerToys CmdPal)
+2. Type the extension alias (default: `cap`)
+3. Type at least 3 characters to search your Capacities objects
+4. Select an object or action
 
 ## Screenshots
 
@@ -23,146 +37,178 @@ Search, create, and append objects without leaving Command Palette:
 
 ## Features
 
-1. Search-first object flow from the top-level command
-2. Grouped results by structure (for example List, Page)
-3. Object actions:
-   - Open in App
-   - Open in Web
-   - Append then open App
-   - Append then open Web
-   - Append only
-4. Create object flow:
-   - choose structure
-   - enter object name
-   - enter content or leave it empty to create a blank object
-   - post-create behavior: open App, open Web, or do nothing
-5. API token handling:
-   - masked token in visible settings
-   - full token stored outside visible settings
-6. Search resiliency:
-   - minimum query length
-   - debounce
-   - cache usage
-   - transient error fallback behavior
-7. Structure exclusions:
-   - RootQuery
-   - MediaImage
-   - RootDailyNote
-   - RootAIChat
-   - RootTask
-   - MediaWebResource
-   - RootSimpleTable
-   - RootTag
-   - MediaPDF
+### Search & Access
+- 🔍 Search-first object lookup from Command Palette
+- 📊 Results grouped by structure type (List, Page, etc.)
+- ⚡ Smart caching and debouncing for performance
+- 🔄 Transient error fallback behavior
+
+### Object Actions
+- Open in Capacities App
+- Open in Capacities Web
+- Append markdown text then open App
+- Append markdown text then open Web
+- Append text only (without opening)
+
+### Object Creation
+- Choose structure type
+- Enter object name
+- Enter markdown content or create blank object
+- Post-create behavior: Open App, Open Web, or do nothing
+
+### Authentication & Security
+- 🔒 API token stored securely (outside visible settings)
+- 🔐 Masked token display in UI
+- ✅ Token validation before operations
+
+### Search Resilience
+- Minimum query length (3 characters)
+- Request debouncing
+- Response caching
+- Rate-limit protection with automatic cooldown
+- Graceful error handling
 
 ## Usage
 
-Invoke the extension alias (for example: cap) and type at least 3 characters to search.
+Invoke the extension alias (for example: `cap`) and type at least 3 characters to search.
 
-Common paths:
+**Common workflows:**
 
-1. Search object -> choose object -> choose action
-2. No query yet -> Create object
-3. No query yet -> Set API token
-4. Choose structure -> enter name -> press Enter on empty content to create a blank object
+1. **Search & Open**: Search object → choose object → choose action
+2. **Create Object**: No query → Create object → enter details
+3. **Set API Token**: No query → Set API token
+4. **Create Blank**: Choose structure → enter name → press Enter (empty content)
 
-For text entry, use escaped newlines with \n when needed.
+For text entry, use escaped newlines with `\n` when needed.
+
+## Current Limitations
+
+The extension focuses on **search, open, append, and create** workflows for standard objects. Some advanced features like Tasks, Daily Notes, and media objects are not yet fully supported.
+
+**Why?** The Capacities API is still evolving, and some object types require more stable API affordances. See [**API_LIMITATIONS.md**](API_LIMITATIONS.md) for detailed reasoning and future plans.
 
 ## Settings
 
-1. Capacities API Token
-2. After Create Object
-   - Open Capacities App
-   - Open Capacities Web
-   - Do nothing
+| Setting | Options | Default |
+|---------|---------|---------|
+| Capacities API Token | Your API token from Capacities | (required) |
+| After Create Object | Open App / Open Web / Do nothing | Open App |
 
-## Roadmap summary
+## Roadmap
 
-### Version 1.0
-
-1. Ship current search/open/append/create scope
-2. Publish to winget
-3. Submit to CmdPal gallery (winget install source)
+### Version 1.0 (Current - 0.1.0)
+- ✅ Search existing objects
+- ✅ Open objects in App/Web
+- ✅ Append text to objects
+- ✅ Create new objects
+- 📋 Publish to WinGet (PR #407721 submitted)
+- 🎯 Submit to CmdPal gallery
 
 ### Version 1.1
-
-1. Post-release stabilization and issue fixes
-2. Icon mapping and visual contrast refinement
-3. Listing and install polish
+- Stabilization and issue fixes
+- Icon mapping and visual refinement
+- UI polish improvements
 
 ### Version 1.2
+- Microsoft Store publication
+- Auto-update mechanism
+- Enhanced structure visualization
 
-1. Publish to Microsoft Store
+### Future (Version 1.3+)
+- Task management workflows
+- Daily Notes integration
+- Media object support
+- Rich content creation
 
-## Author
+## Getting Your API Token
 
-**Vector Rilke**
+1. Go to https://capacities.io/settings/developer
+2. Generate an API token
+3. Copy the token
+4. In Command Palette, use the extension's token setting command to save it
 
-- GitHub: [@vectorrilke](https://github.com/vectorrilke)
-- Project: [cp_capabilities_extension](https://github.com/vectorrilke/cp_capabilities_extension)
+## Security Note
 
-## License
+Your API token is stored in the Windows Registry outside of user-visible settings. It is never:
+- Displayed in plain text in settings
+- Logged to disk
+- Transmitted to any server other than Capacities' official API
 
-MIT License - See LICENSE file for details
+## Project Structure
 
-## Screenshots
-
-For screenshots used in store listings and gallery submissions, see `docs/gallery/SCREENSHOTS.md`.
-
-## Publishing
-
-### WinGet (Primary Distribution)
-
-The extension is published to WinGet with automatic updates via GitHub Actions:
-
-```powershell
-winget install VectorRilke.CapacitiesCommandPaletteExtension
-winget upgrade CapacitiesCommandPaletteExtension
+```
+src/CapacitiesCommandPaletteExtension/
+├── CapacitiesCommandPaletteExtension.cs          # Main extension class
+├── Capacities/                                   # API client
+│   ├── CapacitiesClient.cs
+│   ├── CapacitiesContentComposer.cs
+├── Commands/                                     # Command implementations
+│   ├── OpenCapacitiesObjectCommand.cs
+│   ├── CreateObjectCommand.cs
+│   ├── AppendToObjectAndOpenCommand.cs
+│   └── ...
+├── Pages/                                        # UI pages
+│   ├── CapacitiesCommandPaletteExtensionPage.cs
+│   ├── CreateObjectEnterNamePage.cs
+│   └── ...
+├── Parsing/                                      # Input parsing
+│   └── CapCommandParser.cs
+└── Settings/                                     # Configuration
+    └── ExtensionSettings.cs
 ```
 
-Repository: [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs)
+## Development
 
-### Microsoft Store (Secondary Distribution)
-
-Available in Microsoft Store for broader reach:
-
-- Microsoft Store listing: [Capacities Command Palette Extension](https://www.microsoft.com/store/apps)
-- Partner Center: [partner.microsoft.com](https://partner.microsoft.com/dashboard)
-
-### Command Palette Extension Gallery
-
-Listed in the Extension Gallery for discovery within Command Palette:
-
-- Gallery: [microsoft/CmdPal-Extensions](https://github.com/microsoft/CmdPal-Extensions)
-- Search "Capacities" in Command Palette settings → Extensions → Gallery
-
-## Development & Contributing
+### Requirements
+- .NET 10.0 SDK or later
+- Windows 10.0.26100.0 or later
+- PowerToys Command Palette installed
 
 ### Build
 
 ```powershell
-dotnet build .\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension.sln
+cd src/CapacitiesCommandPaletteExtension
+dotnet build CapacitiesCommandPaletteExtension.csproj
 ```
 
-### Deploy & Test
+### Create Installer
 
-1. Deploy from Visual Studio
-2. Run "Reload Command Palette Extension" in Command Palette
-3. Test all flows
+```powershell
+# Requires Inno Setup 6
+.\build-exe.ps1 -Platforms @("x64", "arm64") -Version "0.1.0.0"
+```
 
-### Requirements
+## Contributing
 
-- PowerToys Command Palette enabled
-- .NET 10.0 or later
-- Windows 10.0.26100.0 or later
+Contributions are welcome! Please:
 
-### Version 2.0
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-1. Expanded create flows (Tasks, Weblinks, Daily Notes, media, PDFs)
-2. Tags for new objects
-3. Richer metadata-driven icon mapping
+## Support & Feedback
 
-## Public docs
+- 📝 [Issues & Bug Reports](https://github.com/vectorrilke/CmdPal-Capacities/issues)
+- 💬 [Discussions](https://github.com/vectorrilke/CmdPal-Capacities/discussions)
+- 🐦 [@vectorrilke](https://twitter.com/vectorrilke)
 
-1. [docs/capacities-api-details.md](docs/capacities-api-details.md)
-2. [docs/publishing-v1-roadmap.md](docs/publishing-v1-roadmap.md)
+## License
+
+MIT License - see [LICENSE](LICENSE) for details
+
+## Credits
+
+- Built for **Windows Command Palette (PowerToys CmdPal)**
+- Integrates with **Capacities** workspace platform
+- Inspired by PowerToys community extensions
+
+## Author
+
+**Vector Rilke**  
+[GitHub](https://github.com/vectorrilke) | [Twitter](https://twitter.com/vectorrilke)
+
+---
+
+**Have feedback?** Open an issue or start a discussion! 🚀
