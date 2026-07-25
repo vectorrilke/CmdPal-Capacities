@@ -39,9 +39,11 @@ winget install VectorRilke.CmdPal-Capacities
 
 Search, create, and append objects without leaving Command Palette:
 
-![Search Capacities objects](docs/gallery/screenshots/1-search-objects.png)
-![Create new objects](docs/gallery/screenshots/2-create-object.png)
-![Enter content](docs/gallery/screenshots/3-create-content.png)
+![Main menu](docs/gallery/screenshots/1-main-menu.png)
+![Search object](docs/gallery/screenshots/2-search-object.png)
+![Create object](docs/gallery/screenshots/3-create-object.png)
+![Open object](docs/gallery/screenshots/4-open-object.png)
+![Append to object](docs/gallery/screenshots/5-append-to-object.png)
 
 ## Features
 
@@ -130,7 +132,6 @@ MIT License - see [LICENSE](LICENSE) for details
 
 - Built for **Windows Command Palette (PowerToys CmdPal)**
 - Integrates with **Capacities** workspace platform
-- Inspired by PowerToys community extensions
 
 ## Author
 
@@ -139,4 +140,4 @@ MIT License - see [LICENSE](LICENSE) for details
 
 ---
 
-**Have feedback?** Open an issue or start a discussion! 🚀
+**Have feedback?** Open an issue.
