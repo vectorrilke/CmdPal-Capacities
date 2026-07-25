@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CapacitiesCommandPaletteExtension")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fc8b46319b39724473c36460a7f0e3048454ea5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df32c643553f9af779ff38da51412c01668c06e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CapacitiesCommandPaletteExtension")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CapacitiesCommandPaletteExtension")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

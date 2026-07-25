@@ -24,11 +24,11 @@ AppSupportURL={#AppURL}
 AppUpdatesURL={#AppURL}
 CreateAppDir=no
 OutputDir=bin\Release\installer
-OutputBaseFilename={#ProjectName}-{#AppVersion}
+OutputBaseFilename={#ProjectName}-{#AppVersion}-x64
 DefaultDirName={userappdata}\Microsoft\Command Palette Extensions\{#ProjectName}
 Compression=lzma
 SolidCompression=yes
-PrivilegesRequired=admin
+PrivilegesRequired=lowest
 ShowLanguageDialog=no
 
 [Languages]
@@ -53,3 +53,4 @@ Type: dirifempty; Name: "{userappdata}\Microsoft\Command Palette Extensions\{#Pr
 ; Register the extension COM object
 Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Explorer\CommandPalette\Extensions\{#AppGUID}"; Flags: uninsdeletekey
 Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Explorer\CommandPalette\Extensions\{#AppGUID}"; ValueType: string; ValueName: "Path"; ValueData: "{app}\{#ProjectName}.dll"
+

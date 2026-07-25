@@ -16,7 +16,9 @@ C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommand
 C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\Properties\launchSettings.json
 C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\Properties\PublishProfiles\win-arm64.pubxml
 C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\Properties\PublishProfiles\win-x64.pubxml
+C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\setup-arm64.iss
 C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\setup-template.iss
+C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\setup-x64.iss
 C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\Microsoft.CommandPalette.Extensions.dll
 C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\Microsoft.CommandPalette.Extensions.pdb
 C:\Users\vector\OneDrive\www\dev\cp_capabilities_extension\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension\bin\Release\win-x64\publish\CapacitiesCommandPaletteExtension.pri

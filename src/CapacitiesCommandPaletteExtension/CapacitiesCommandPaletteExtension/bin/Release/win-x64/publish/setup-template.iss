@@ -23,22 +23,13 @@ AppPublisherURL={#AppURL}
 AppSupportURL={#AppURL}
 AppUpdatesURL={#AppURL}
 CreateAppDir=no
-LicenseFile=..\..\..\LICENSE
 OutputDir=bin\Release\installer
 OutputBaseFilename={#ProjectName}-{#AppVersion}
 DefaultDirName={userappdata}\Microsoft\Command Palette Extensions\{#ProjectName}
-Compression=lz4
+Compression=lzma
 SolidCompression=yes
-PrivilegesRequired=lowest
+PrivilegesRequired=admin
 ShowLanguageDialog=no
-VersionInfoVersion={#AppVersion}
-VersionInfoCompany={#AppPublisher}
-VersionInfoDescription={#AppName}
-VersionInfoProductName={#AppName}
-VersionInfoProductVersion={#AppVersion}
-VersionInfoOriginalFileName={#ProjectName}.exe
-VersionInfoInternalName={#ProjectName}
-VersionInfoCopyright=Copyright (c) Vector Rilke
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
