@@ -10,7 +10,7 @@ Search objects, open them, append text, and create new objects without leaving C
 
 ## Requirements
 
-⚠️ **You need a Capacities Pro subscription** to use this extension.
+**You need a Capacities Pro subscription** to use this extension.
 
 The extension requires API access to Capacities, which is only available with a **Capacities Pro** paid plan. Free accounts do not have API access.
 
@@ -48,10 +48,10 @@ Search, create, and append objects without leaving Command Palette:
 ## Features
 
 ### Search & Access
-- 🔍 Search-first object lookup from Command Palette
-- 📊 Results grouped by structure type (List, Page, etc.)
-- ⚡ Smart caching and debouncing for performance
-- 🔄 Transient error fallback behavior
+- Search-first object lookup from Command Palette
+- Results grouped by structure type (List, Page, etc.)
+- Smart caching and debouncing for performance
+- Transient error fallback behavior
 
 ### Object Actions
 - Open in Capacities App
@@ -67,9 +67,9 @@ Search, create, and append objects without leaving Command Palette:
 - Post-create behavior: Open App, Open Web, or do nothing
 
 ### Authentication & Security
-- 🔒 API token stored securely (outside visible settings)
-- 🔐 Masked token display in UI
-- ✅ Token validation before operations
+- API token stored securely (outside visible settings)
+- Masked token display in UI
+- Token validation before operations
 
 ### Search Resilience
 - Minimum query length (3 characters)
@@ -120,9 +120,9 @@ Contributions are welcome! Please:
 
 ## Support & Feedback
 
-- 📝 [Issues & Bug Reports](https://github.com/vectorrilke/CmdPal-Capacities/issues)
-- 💬 [Discussions](https://github.com/vectorrilke/CmdPal-Capacities/discussions)
-- 🐦 [@vectorrilke](https://twitter.com/vectorrilke)
+- [Issues & Bug Reports](https://github.com/vectorrilke/CmdPal-Capacities/issues)
+- [Discussions](https://github.com/vectorrilke/CmdPal-Capacities/discussions)
+- [@vectorrilke](https://twitter.com/vectorrilke)
 
 ## License
 
