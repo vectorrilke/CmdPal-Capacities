@@ -6,7 +6,7 @@ Search objects, open them, append text, and create new objects without leaving C
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-blue.svg)
-![Status: Release Candidate](https://img.shields.io/badge/Status-Release%20Candidate-green.svg)
+![Status: Store Certification](https://img.shields.io/badge/Status-Store%20Certification-orange.svg)
 
 ## Requirements
 
