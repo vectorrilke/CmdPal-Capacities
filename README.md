@@ -17,9 +17,11 @@ Search objects, open them, append text, and create new objects without leaving C
 
 Search, create, and append objects without leaving Command Palette:
 
-![Search Capacities objects](docs/gallery/screenshots/1-search-objects.png)
-![Create new objects](docs/gallery/screenshots/2-create-object.png)
-![Enter content](docs/gallery/screenshots/3-create-content.png)
+![Main menu](https://raw.githubusercontent.com/vectorrilke/CmdPal-Capacities/main/docs/gallery/screenshots/1-main-menu.png)
+![Search object](https://raw.githubusercontent.com/vectorrilke/CmdPal-Capacities/main/docs/gallery/screenshots/2-search-object.png)
+![Create object](https://raw.githubusercontent.com/vectorrilke/CmdPal-Capacities/main/docs/gallery/screenshots/3-create-object.png)
+![Open object](https://raw.githubusercontent.com/vectorrilke/CmdPal-Capacities/main/docs/gallery/screenshots/4-open-object.png)
+![Append to object](https://raw.githubusercontent.com/vectorrilke/CmdPal-Capacities/main/docs/gallery/screenshots/5-append-to-object.png)
 
 ## Features
 
