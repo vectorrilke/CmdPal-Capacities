@@ -4,15 +4,6 @@ Capacities integration for Windows Command Palette (PowerToys CmdPal).
 
 Search objects, open them, append text, and create new objects without leaving Command Palette.
 
-## Current status
-
-1. Current milestone: Version 0.9 release candidate
-2. Target first public release: Version 1.0
-3. Planned distribution order:
-   - winget
-   - CmdPal gallery
-   - Microsoft Store (Version 1.2)
-
 ## Screenshots
 
 Search, create, and append objects without leaving Command Palette:
@@ -78,30 +69,37 @@ For text entry, use escaped newlines with \n when needed.
    - Open Capacities Web
    - Do nothing
 
-## Roadmap summary
+## Roadmap
 
-### Version 1.0
+### Current status
+
+1. Current milestone: Version 1.0 release candidate
+2. Submitted to distribution through
+   - winget
+   - Windows Store
+   - CmdPal Gallery is planned once releasesare approved
+
+#### Version 1.0
 
 1. Ship current search/open/append/create scope
-2. Publish to winget
-3. Submit to CmdPal gallery (winget install source)
 
-### Version 1.1
+#### Version 1.1
 
-1. Post-release stabilization and issue fixes
-2. Icon mapping and visual contrast refinement
+1. Add structureId (Categories) description
+2. Icon refinement
 3. Listing and install polish
 
-### Version 1.2
+#### Version 2.0
 
-1. Publish to Microsoft Store
+1. Expanded create flows (Tasks, Weblinks, Daily Notes, media, PDFs)
+2. Tags for new objects
+3. Richer metadata-driven icon mapping
+
 
 ## Author
 
 **Vector Rilke**
 
-- GitHub: [@vectorrilke](https://github.com/vectorrilke)
-- Project: [cp_capabilities_extension](https://github.com/vectorrilke/cp_capabilities_extension)
 
 ## License
 
@@ -124,14 +122,14 @@ winget upgrade CapacitiesCommandPaletteExtension
 
 Repository: [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs)
 
-### Microsoft Store (Secondary Distribution)
+### Microsoft Store (Secondary Distribution) *(in pipeline)*
 
 Available in Microsoft Store for broader reach:
 
 - Microsoft Store listing: [Capacities Command Palette Extension](https://www.microsoft.com/store/apps)
 - Partner Center: [partner.microsoft.com](https://partner.microsoft.com/dashboard)
 
-### Command Palette Extension Gallery
+### Command Palette Extension Gallery *(in pipeline)*
 
 Listed in the Extension Gallery for discovery within Command Palette:
 
@@ -158,11 +156,7 @@ dotnet build .\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExt
 - .NET 10.0 or later
 - Windows 10.0.26100.0 or later
 
-### Version 2.0
 
-1. Expanded create flows (Tasks, Weblinks, Daily Notes, media, PDFs)
-2. Tags for new objects
-3. Richer metadata-driven icon mapping
 
 ## Public docs
 
