@@ -20,7 +20,7 @@ internal sealed partial class CreateObjectEnterContentPage : DynamicListPage
         _settingsManager = settingsManager;
         _structureId = structureId;
         _objectName = objectName;
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Icon = IconHelpers.FromRelativePath("Assets\\ExtensionLogo.png");
         Title = "Enter object content";
         Name = "Enter object content";
         PlaceholderText = "Enter content here";

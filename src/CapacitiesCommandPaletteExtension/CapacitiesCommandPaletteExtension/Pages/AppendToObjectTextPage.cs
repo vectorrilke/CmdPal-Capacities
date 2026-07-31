@@ -24,7 +24,7 @@ internal sealed partial class AppendToObjectTextPage : DynamicListPage
         _objectTitle = objectTitle;
         _openBehavior = openBehavior;
 
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Icon = IconHelpers.FromRelativePath("Assets\\ExtensionLogo.png");
         Title = "Append text";
         Name = "Append text";
         PlaceholderText = "Enter content here";

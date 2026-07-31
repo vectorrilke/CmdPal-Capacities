@@ -19,7 +19,7 @@ internal sealed partial class ObjectActionsPage : DynamicListPage
         _objectId = objectId;
         _objectTitle = objectTitle;
 
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Icon = IconHelpers.FromRelativePath("Assets\\ExtensionLogo.png");
         Title = objectTitle;
         Name = "Object actions";
         PlaceholderText = $"Enter to open or start typing to add content to {_objectTitle}";

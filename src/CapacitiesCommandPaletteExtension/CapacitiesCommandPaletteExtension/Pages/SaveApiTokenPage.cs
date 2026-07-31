@@ -17,7 +17,7 @@ internal sealed partial class SaveApiTokenPage : DynamicListPage
     public SaveApiTokenPage(CapacitiesSettingsManager settingsManager)
     {
         _settingsManager = settingsManager;
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Icon = IconHelpers.FromRelativePath("Assets\\ExtensionLogo.png");
         Title = "Save API token";
         Name = "Save API token";
         PlaceholderText = "Enter API token here";

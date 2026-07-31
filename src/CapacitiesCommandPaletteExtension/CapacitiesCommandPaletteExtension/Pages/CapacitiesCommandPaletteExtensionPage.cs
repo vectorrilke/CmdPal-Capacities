@@ -16,7 +16,7 @@ namespace CapacitiesCommandPaletteExtension;
 internal sealed partial class CapacitiesCommandPaletteExtensionPage : DynamicListPage
 {
     private const int MinQueryLength = 3;
-    private static readonly IconInfo CapacitiesIcon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+    private static readonly IconInfo CapacitiesIcon = IconHelpers.FromRelativePath("Assets\\ExtensionLogo.png");
     private static readonly IconInfo SearchIcon = new("\uE721");
     private static readonly IconInfo StructureIcon = new("\uE8B7");
     private static readonly IconInfo ObjectIcon = new("\uE8A5");

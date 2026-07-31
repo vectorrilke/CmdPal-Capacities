@@ -1,0 +1,145 @@
+name: Build and Release Extension
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Extension version (e.g., 0.1.0.0)'
+        required: true
+        default: '0.1.0.0'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        platform: [x64, arm64]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Install Inno Setup
+        run: |
+          choco install inno-setup -y
+          
+      - name: Build extension (${{ matrix.platform }})
+        run: |
+          $ProjectDir = "${{ github.workspace }}\src\CapacitiesCommandPaletteExtension\CapacitiesCommandPaletteExtension"
+          $ProjectFile = "$ProjectDir\CapacitiesCommandPaletteExtension.csproj"
+          
+          # Restore packages
+          dotnet restore $ProjectFile
+          
+          # Publish for platform
+          dotnet publish $ProjectFile `
+            --configuration Release `
+            --runtime "win-${{ matrix.platform }}" `
+            --self-contained true `
+            --output "$ProjectDir\bin\Release\win-${{ matrix.platform }}\publish"
+          
+          # Create platform-specific setup script
+          $setupTemplate = Get-Content "$ProjectDir\setup-template.iss" -Raw
+          $setupScript = $setupTemplate -replace '#define AppVersion ".*"', "#define AppVersion `"${{ github.event.inputs.version }}`""
+          $setupScript = $setupScript -replace 'OutputBaseFilename=.*?-x64', "OutputBaseFilename=CapacitiesCommandPaletteExtension-${{ github.event.inputs.version }}-${{ matrix.platform }}"
+          $setupScript = $setupScript -replace 'Source: "bin\\Release\\win-x64\\publish', "Source: `"bin\Release\win-${{ matrix.platform }}\publish"
+          
+          if ("${{ matrix.platform }}" -eq "arm64") {
+            $setupScript = $setupScript -replace '(\[Setup\][^\[]*)(MinVersion=)', "`$1ArchitecturesAllowed=arm64`r`nArchitecturesInstallIn64BitMode=arm64`r`n`$2"
+          } else {
+            $setupScript = $setupScript -replace '(\[Setup\][^\[]*)(MinVersion=)', "`$1ArchitecturesAllowed=x64compatible`r`nArchitecturesInstallIn64BitMode=x64compatible`r`n`$2"
+          }
+          
+          $setupScript | Out-File -FilePath "$ProjectDir\setup-${{ matrix.platform }}.iss" -Encoding UTF8
+          
+          # Build installer with Inno Setup
+          $InnoSetupPath = "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe"
+          & $InnoSetupPath "$ProjectDir\setup-${{ matrix.platform }}.iss"
+          
+          if ($LASTEXITCODE -ne 0) {
+            Write-Error "Inno Setup failed for ${{ matrix.platform }}"
+            exit 1
+          }
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: installer-${{ matrix.platform }}
+          path: src/CapacitiesCommandPaletteExtension/CapacitiesCommandPaletteExtension/bin/Release/installer/*.exe
+          if-no-files-found: error
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-artifacts
+
+      - name: List artifacts
+        run: |
+          ls -R release-artifacts
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          release_name: Release ${{ github.event.inputs.version }}
+          body: |
+            # Capacities Command Palette Extension v${{ github.event.inputs.version }}
+            
+            ## Changes
+            - See commit details for changes in this release
+            
+            ## Installation
+            Download the installer for your platform:
+            - **x64**: CapacitiesCommandPaletteExtension-${{ github.event.inputs.version }}-x64.exe
+            - **ARM64**: CapacitiesCommandPaletteExtension-${{ github.event.inputs.version }}-arm64.exe
+            
+            Run the installer and follow the prompts.
+            
+            ## Distribution
+            These installers are published to WinGet. Install via:
+            ```
+            winget install vectorrilke.CapacitiesCommandPaletteExtension
+            ```
+          draft: false
+          prerelease: false
+
+      - name: Upload x64 installer
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: release-artifacts/installer-x64/CapacitiesCommandPaletteExtension-${{ github.event.inputs.version }}-x64.exe
+          asset_name: CapacitiesCommandPaletteExtension-${{ github.event.inputs.version }}-x64.exe
+          asset_content_type: application/octet-stream
+
+      - name: Upload ARM64 installer
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: release-artifacts/installer-arm64/CapacitiesCommandPaletteExtension-${{ github.event.inputs.version }}-arm64.exe
+          asset_name: CapacitiesCommandPaletteExtension-${{ github.event.inputs.version }}-arm64.exe
+          asset_content_type: application/octet-stream
+
+      - name: Output release URL
+        run: |
+          echo "Release created: ${{ steps.create_release.outputs.html_url }}"
+          echo "Release upload URL: ${{ steps.create_release.outputs.upload_url }}"

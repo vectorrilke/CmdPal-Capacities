@@ -18,7 +18,7 @@ internal sealed partial class CreateObjectChooseStructurePage : DynamicListPage
     public CreateObjectChooseStructurePage(CapacitiesSettingsManager settingsManager)
     {
         _settingsManager = settingsManager;
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Icon = IconHelpers.FromRelativePath("Assets\\ExtensionLogo.png");
         Title = "Choose structure";
         Name = "Choose structure";
     }

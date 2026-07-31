@@ -15,7 +15,7 @@ public partial class CapacitiesCommandPaletteExtensionCommandsProvider : Command
     public CapacitiesCommandPaletteExtensionCommandsProvider()
     {
         DisplayName = "Capacities";
-        Icon = IconHelpers.FromRelativePath("Assets\\StoreLogo.png");
+        Icon = IconHelpers.FromRelativePath("Assets\\ExtensionLogo.png");
         Settings = _settingsManager.Settings;
     }
 
