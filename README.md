@@ -30,15 +30,17 @@ The extension requires API access to Capacities, which is only available with a 
 # Via WinGet
 # Not available yet
 winget install VectorRilke.CmdPal-Capacities
-
-# Via Microsoft Store
-# https://apps.microsoft.com/detail/9NSN399G59KM
 ```
+
+**OR**
+
+### Microsoft Store
+https://apps.microsoft.com/detail/9NSN399G59KM
 
 If the extension is not yet available through WinGet on your machine, you can also install it directly from the Microsoft Store: [ms-windows-store://pdp/?productid=9NSN399G59KM](ms-windows-store://pdp/?productid=9NSN399G59KM)
 
 Manual download from GitHub Releases is also available:
-# https://github.com/vectorrilke/CmdPal-Capacities/releases
+https://github.com/vectorrilke/CmdPal-Capacities/releases
 
 ### Usage
 
