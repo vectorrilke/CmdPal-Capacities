@@ -41,10 +41,13 @@ foreach ($Platform in $Platforms) {
     
     # Build and publish
     Write-Host "Building and publishing $Platform application..." -ForegroundColor Yellow
+    # WindowsPackageType=None + empty PublishProfile force an unpackaged, WinGet-friendly build (overrides Store-only csproj defaults)
     dotnet publish $ProjectFile `
         --configuration $Configuration `
         --runtime "win-$Platform" `
         --self-contained true `
+        -p:WindowsPackageType=None `
+        -p:PublishProfile= `
         --output "$ProjectDir\bin\$Configuration\win-$Platform\publish"
 
     if ($LASTEXITCODE -ne 0) { 

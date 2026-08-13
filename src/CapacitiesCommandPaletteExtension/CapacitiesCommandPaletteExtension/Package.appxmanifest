@@ -11,7 +11,7 @@
   <Identity
     Name="VectorRilke.CapacitiesCommandPaletteExtension"
     Publisher="CN=4E7AD482-2912-467E-8F64-9F8B81C84224"
-    Version="0.1.0.0" />
+    Version="0.1.1.0" />
 
   <Properties>
     <DisplayName>Capacities Command Palette Extension</DisplayName>

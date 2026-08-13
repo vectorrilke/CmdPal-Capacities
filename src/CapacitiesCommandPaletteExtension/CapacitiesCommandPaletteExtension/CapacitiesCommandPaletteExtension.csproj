@@ -18,7 +18,7 @@
     <!-- Microsoft Store submission values from Partner Center -->
     <AppxPackageIdentityName>VectorRilke.CapacitiesCommandPaletteExtension</AppxPackageIdentityName>
     <AppxPackagePublisher>CN=4E7AD482-2912-467E-8F64-9F8B81C84224</AppxPackagePublisher>
-    <AppxPackageVersion>0.1.0.0</AppxPackageVersion>
+    <AppxPackageVersion>0.1.1.0</AppxPackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Assets\ExtensionLogo.png" />
