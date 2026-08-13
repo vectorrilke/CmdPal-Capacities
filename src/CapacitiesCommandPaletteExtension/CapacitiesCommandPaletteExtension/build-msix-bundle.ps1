@@ -3,14 +3,19 @@
 
 param(
     [string]$ExtensionName = "CapacitiesCommandPaletteExtension",
-    [string]$VersionNumber = "0.1.0.0"
+    [string]$VersionNumber = "0.1.1.0"
 )
 
 Write-Host "Building MSIX Bundle for Microsoft Store" -ForegroundColor Cyan
 
+# Generated package output must not become content in the second architecture build.
+if (Test-Path "AppPackages") {
+    Remove-Item -Path "AppPackages" -Recurse -Force
+}
+
 # Step 1: Build x64 + ARM64 MSIX
 Write-Host "`nBuilding x64 MSIX..." -ForegroundColor Yellow
-dotnet build --configuration Release -p:GenerateAppxPackageOnBuild=true -p:Platform=x64 -p:AppxPackageDir="AppPackages\x64\"
+dotnet build --configuration Release -p:RuntimeIdentifier=win-x64 -p:SelfContained=true -p:WindowsPackageType=MSIX -p:GenerateAppxPackageOnBuild=true -p:AppxBundle=Never -p:Platform=x64 -p:AppxPackageDir="AppPackages\x64\"
 if ($LASTEXITCODE -ne 0) {
     Write-Host "x64 build failed" -ForegroundColor Red
     exit 1
@@ -18,7 +23,7 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host "x64 build complete" -ForegroundColor Green
 
 Write-Host "`nBuilding ARM64 MSIX..." -ForegroundColor Yellow
-dotnet build --configuration Release -p:GenerateAppxPackageOnBuild=true -p:Platform=ARM64 -p:AppxPackageDir="AppPackages\ARM64\"
+dotnet build --configuration Release -p:RuntimeIdentifier=win-arm64 -p:SelfContained=true -p:WindowsPackageType=MSIX -p:GenerateAppxPackageOnBuild=true -p:AppxBundle=Never -p:Platform=ARM64 -p:AppxPackageDir="AppPackages\ARM64\"
 if ($LASTEXITCODE -ne 0) {
     Write-Host "ARM64 build failed" -ForegroundColor Red
     exit 1
@@ -84,7 +89,10 @@ Write-Host "Found makeappx: $($makeappx.FullName)" -ForegroundColor Green
 Write-Host "`nCreating .msixbundle..." -ForegroundColor Yellow
 
 $bundleOutput = "$($ExtensionName)_$($VersionNumber)_Bundle.msixbundle"
-& $makeappx.FullName bundle /f bundle_mapping.txt /p $bundleOutput
+if (Test-Path $bundleOutput) {
+    Remove-Item -Path $bundleOutput -Force
+}
+& $makeappx.FullName bundle /bv $VersionNumber /f bundle_mapping.txt /p $bundleOutput
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Bundle creation failed" -ForegroundColor Red

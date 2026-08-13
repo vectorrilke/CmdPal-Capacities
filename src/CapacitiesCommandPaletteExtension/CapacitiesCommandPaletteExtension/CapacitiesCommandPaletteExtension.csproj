@@ -10,7 +10,7 @@
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
     <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
 
-    <PublishProfile>win-$(Platform).pubxml</PublishProfile>
+    <WindowsPackageType>None</WindowsPackageType>
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
     <AppxDefaultResourceQualifiers>Language=en-US</AppxDefaultResourceQualifiers>
@@ -21,6 +21,20 @@
     <AppxPackageVersion>0.1.1.0</AppxPackageVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="AppPackages\**" />
+    <None Remove="AppPackages\**" />
+    <Content Remove="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Remove="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Remove="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Remove="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Remove="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Remove="Assets\Square44x44Logo.targetsize-48.png" />
+    <None Remove="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <None Remove="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <None Remove="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <None Remove="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <None Remove="Assets\Square44x44Logo.targetsize-16.png" />
+    <None Remove="Assets\Square44x44Logo.targetsize-48.png" />
     <None Remove="Assets\ExtensionLogo.png" />
     <None Remove="Assets\LargeTile.scale-100.png" />
     <None Remove="Assets\LargeTile.scale-200.png" />

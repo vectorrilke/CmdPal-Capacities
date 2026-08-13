@@ -9,7 +9,7 @@
 param(
     [string]$ExtensionName = "CapacitiesCommandPaletteExtension",
     [string]$Configuration = "Release",
-    [string]$Version = "0.1.0.0",
+    [string]$Version = "0.1.1.0",
     [string[]]$Platforms = @("x64", "arm64")
 )
 

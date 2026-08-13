@@ -1,3 +1,3 @@
 [Files]
-"AppPackages\x64\CapacitiesCommandPaletteExtension_0.1.0.0_Test\CapacitiesCommandPaletteExtension_0.1.0.0_x64.msix" "CapacitiesCommandPaletteExtension_0.1.0.0_x64.msix"
-"AppPackages\ARM64\CapacitiesCommandPaletteExtension_0.1.0.0_Test\CapacitiesCommandPaletteExtension_0.1.0.0_arm64.msix" "CapacitiesCommandPaletteExtension_0.1.0.0_arm64.msix"
+"AppPackages\x64\CapacitiesCommandPaletteExtension_0.1.1.0_x64_Test\CapacitiesCommandPaletteExtension_0.1.1.0_x64.msix" "CapacitiesCommandPaletteExtension_0.1.1.0_x64.msix"
+"AppPackages\ARM64\CapacitiesCommandPaletteExtension_0.1.1.0_arm64_Test\CapacitiesCommandPaletteExtension_0.1.1.0_arm64.msix" "CapacitiesCommandPaletteExtension_0.1.1.0_arm64.msix"

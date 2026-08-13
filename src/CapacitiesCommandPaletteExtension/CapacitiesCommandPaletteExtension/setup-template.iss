@@ -8,7 +8,7 @@
 ; - DefaultDirName: Installation target folder
 
 #define AppName "Capacities Command Palette Extension"
-#define AppVersion "0.1.0.0"
+#define AppVersion "0.1.1.0"
 #define AppPublisher "Vector Rilke"
 #define AppURL "https://github.com/vectorrilke/CmdPal-Capacities"
 #define AppGUID "f7e5cd38-f4cf-4280-930a-6a352b70672e"
